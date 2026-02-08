@@ -136,6 +136,28 @@
             opacity: 0;
             transform: translateY(30px);
         }
+
+        /* PDF Embed Styling */
+        .resume-container {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            background: #1a1a1a;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+        
+        .pdf-fallback {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .resume-container {
+                height: 400px;
+            }
+        }
     </style>
 </head>
 <body class="font-sans antialiased selection:bg-azure-500 selection:text-white">
@@ -155,12 +177,12 @@
                     <a href="#about" class="nav-link text-gray-300 hover:text-white transition-colors text-sm font-medium">About</a>
                     <a href="#skills" class="nav-link text-gray-300 hover:text-white transition-colors text-sm font-medium">Skills</a>
                     <a href="#experience" class="nav-link text-gray-300 hover:text-white transition-colors text-sm font-medium">Experience</a>
-                    <a href="#certifications" class="nav-link text-gray-300 hover:text-white transition-colors text-sm font-medium">Certifications</a>
+                    <a href="#resume" class="nav-link text-gray-300 hover:text-white transition-colors text-sm font-medium">Resume</a>
                     <a href="#contact" class="nav-link text-gray-300 hover:text-white transition-colors text-sm font-medium">Contact</a>
                 </div>
 
                 <div class="flex items-center gap-4">
-                    <a href="mailto:vanandlokeshm@gmail.com" class="hidden md:flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-azure-600 to-azure-700 hover:from-azure-500 hover:to-azure-600 transition-all duration-300 text-white text-sm font-medium shadow-lg shadow-azure-900/20">
+                    <a href="mailto:venkataanand@example.com" class="hidden md:flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-azure-600 to-azure-700 hover:from-azure-500 hover:to-azure-600 transition-all duration-300 text-white text-sm font-medium shadow-lg shadow-azure-900/20">
                         <i class="fas fa-paper-plane"></i>
                         Hire Me
                     </a>
@@ -177,7 +199,7 @@
                 <a href="#about" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md">About</a>
                 <a href="#skills" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md">Skills</a>
                 <a href="#experience" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md">Experience</a>
-                <a href="#certifications" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md">Certifications</a>
+                <a href="#resume" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md">Resume</a>
                 <a href="#contact" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md">Contact</a>
             </div>
         </div>
@@ -212,23 +234,23 @@
                         <a href="#experience" class="px-8 py-4 rounded-full bg-gradient-to-r from-azure-600 to-azure-700 hover:from-azure-500 hover:to-azure-600 transition-all duration-300 text-white font-medium shadow-lg shadow-azure-900/30 hover:shadow-azure-900/50 transform hover:-translate-y-1">
                             View Experience
                         </a>
-                        <a href="#contact" class="px-8 py-4 rounded-full glass-card hover:bg-white/5 transition-all duration-300 text-white font-medium border border-white/20 hover:border-azure-400/50">
-                            Get In Touch
+                        <a href="#resume" class="px-8 py-4 rounded-full glass-card hover:bg-white/5 transition-all duration-300 text-white font-medium border border-white/20 hover:border-azure-400/50">
+                            View Resume
                         </a>
                     </div>
 
                     <div class="flex items-center gap-6 pt-4">
-                        <a href="#" class="text-gray-400 hover:text-azure-400 transition-colors text-2xl">
+                        <a href="https://www.linkedin.com/in/venkata-mittapalli" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-azure-400 transition-colors text-2xl">
                             <i class="fab fa-linkedin"></i>
                         </a>
                         <a href="#" class="text-gray-400 hover:text-azure-400 transition-colors text-2xl">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-azure-400 transition-colors text-2xl">
+                        <a href="mailto:venkataanand@example.com" class="text-gray-400 hover:text-azure-400 transition-colors text-2xl">
                             <i class="fas fa-envelope"></i>
                         </a>
                         <div class="h-px flex-1 bg-gradient-to-r from-white/10 to-transparent"></div>
-                        <span class="text-gray-500 text-sm">Toronto, Canada</span>
+                        <span class="text-gray-500 text-sm">Mississauga, Canada</span>
                     </div>
                 </div>
 
@@ -328,7 +350,7 @@
                     
                     <div class="mt-8 flex flex-wrap gap-3">
                         <span class="px-4 py-2 rounded-full glass-card text-sm text-azure-400 border border-azure-500/30">
-                            <i class="fas fa-map-marker-alt mr-2"></i>Mississauaga, Canada
+                            <i class="fas fa-map-marker-alt mr-2"></i>Mississauga, Canada
                         </span>
                         <span class="px-4 py-2 rounded-full glass-card text-sm text-azure-400 border border-azure-500/30">
                             <i class="fas fa-graduation-cap mr-2"></i>PGDM Cloud Data Management
@@ -633,8 +655,111 @@
         </div>
     </section>
 
+    <!-- Resume Section - NEW -->
+    <section id="resume" class="py-24 relative bg-black/30">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal">
+                <h2 class="font-display text-4xl md:text-5xl font-bold mb-4">My <span class="gradient-text">Resume</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">View my detailed professional experience or download a copy for your records</p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Resume Preview -->
+                <div class="lg:col-span-2 reveal">
+                    <div class="glass-card rounded-2xl p-4">
+                        <div class="flex justify-between items-center mb-4 px-2">
+                            <h3 class="font-display font-bold text-lg">Resume Preview</h3>
+                            <div class="flex gap-2">
+                                <button onclick="zoomResume(-0.1)" class="p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                                    <i class="fas fa-minus text-sm"></i>
+                                </button>
+                                <button onclick="zoomResume(0.1)" class="p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                                    <i class="fas fa-plus text-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Embedded Resume Viewer -->
+                        <div class="resume-container" id="resumeContainer">
+                            <iframe 
+                                src="data:application/pdf;base64,YOUR_RESUME_BASE64_HERE" 
+                                width="100%" 
+                                height="100%" 
+                                style="border: none; border-radius: 0.5rem;"
+                                title="Venkata Anand Resume"
+                                id="resumeFrame">
+                            </iframe>
+                            
+                            <!-- Fallback for browsers that don't support iframe PDF -->
+                            <div class="pdf-fallback" id="pdfFallback">
+                                <i class="fas fa-file-pdf text-6xl text-azure-400 mb-4"></i>
+                                <p class="text-gray-400 mb-4">Your browser doesn't support PDF preview</p>
+                                <a href="VENKATA_ANAND_RESUME.pdf" download class="px-6 py-3 rounded-full bg-azure-600 hover:bg-azure-500 text-white font-medium transition-colors inline-flex items-center gap-2">
+                                    <i class="fas fa-download"></i>
+                                    Download PDF
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Download Options -->
+                <div class="space-y-6 reveal">
+                    <div class="glass-card rounded-2xl p-6 hover-lift">
+                        <div class="w-14 h-14 rounded-xl bg-azure-900/30 flex items-center justify-center mb-4">
+                            <i class="fas fa-file-pdf text-2xl text-azure-400"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-lg mb-2">Download Resume</h3>
+                        <p class="text-gray-400 text-sm mb-4">Get a PDF copy of my complete resume</p>
+                        <a href="VENKATA_ANAND_RESUME.pdf" download class="w-full py-3 rounded-xl bg-gradient-to-r from-azure-600 to-azure-700 hover:from-azure-500 hover:to-azure-600 transition-all duration-300 text-white font-medium text-center block">
+                            <i class="fas fa-download mr-2"></i>Download PDF
+                        </a>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-6 hover-lift">
+                        <div class="w-14 h-14 rounded-xl bg-indigo-900/30 flex items-center justify-center mb-4">
+                            <i class="fas fa-share-alt text-2xl text-indigo-400"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-lg mb-2">Share Profile</h3>
+                        <p class="text-gray-400 text-sm mb-4">Share my portfolio with your network</p>
+                        <div class="flex gap-3">
+                            <button onclick="copyLink()" class="flex-1 py-3 rounded-xl bg-white/5 hover:bg-white/10 transition-colors text-white font-medium text-sm border border-white/10">
+                                <i class="fas fa-link mr-2"></i>Copy Link
+                            </button>
+                            <a href="https://www.linkedin.com/in/venkata-mittapalli" target="_blank" class="flex-1 py-3 rounded-xl bg-[#0077b5] hover:bg-[#006396] transition-colors text-white font-medium text-center text-sm">
+                                <i class="fab fa-linkedin mr-2"></i>LinkedIn
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-6">
+                        <h3 class="font-display font-bold text-lg mb-4">Quick Info</h3>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex justify-between">
+                                <span class="text-gray-400">Experience</span>
+                                <span class="text-white font-medium">5+ Years</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-400">Location</span>
+                                <span class="text-white font-medium">Mississauga, ON</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-400">Status</span>
+                                <span class="text-emerald-400 font-medium">Open to Work</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-400">Certification</span>
+                                <span class="text-white font-medium">AZ-900</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Certifications & Education -->
-    <section id="certifications" class="py-24 relative bg-black/30">
+    <section id="certifications" class="py-24 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-16">
                 <!-- Certifications -->
@@ -693,7 +818,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-24 relative">
+    <section id="contact" class="py-24 relative bg-black/30">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div class="reveal">
                 <h2 class="font-display text-4xl md:text-5xl font-bold mb-6">Let's Build <span class="gradient-text">Together</span></h2>
@@ -710,30 +835,30 @@
                         <p class="text-gray-400 text-sm">venkataanand@example.com</p>
                     </a>
 
-                    <a href="#" class="glass-card rounded-2xl p-6 hover-lift group">
-                        <div class="w-14 h-14 rounded-full bg-indigo-900/30 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                            <i class="fab fa-linkedin text-2xl text-indigo-400"></i>
+                    <a href="https://www.linkedin.com/in/venkata-mittapalli" target="_blank" rel="noopener noreferrer" class="glass-card rounded-2xl p-6 hover-lift group">
+                        <div class="w-14 h-14 rounded-full bg-[#0077b5]/20 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fab fa-linkedin text-2xl text-[#0077b5]"></i>
                         </div>
                         <h3 class="font-display font-bold mb-2">LinkedIn</h3>
                         <p class="text-gray-400 text-sm">Connect with me</p>
                     </a>
 
-                    <a href="#" class="glass-card rounded-2xl p-6 hover-lift group">
+                    <div class="glass-card rounded-2xl p-6 hover-lift group">
                         <div class="w-14 h-14 rounded-full bg-purple-900/30 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                             <i class="fas fa-map-marker-alt text-2xl text-purple-400"></i>
                         </div>
                         <h3 class="font-display font-bold mb-2">Location</h3>
-                        <p class="text-gray-400 text-sm">Kitchener, Canada</p>
-                    </a>
+                        <p class="text-gray-400 text-sm">Mississauga, Canada</p>
+                    </div>
                 </div>
 
                 <div class="glass-card rounded-3xl p-8 md:p-12 inline-block w-full max-w-2xl">
                     <h3 class="font-display font-bold text-2xl mb-6">Download Resume</h3>
                     <p class="text-gray-400 mb-6">Get a copy of my detailed resume for your records</p>
-                    <button class="px-8 py-4 rounded-full bg-gradient-to-r from-azure-600 to-azure-700 hover:from-azure-500 hover:to-azure-600 transition-all duration-300 text-white font-medium shadow-lg shadow-azure-900/30 hover:shadow-azure-900/50 transform hover:-translate-y-1 inline-flex items-center gap-3">
+                    <a href="VENKATA_ANAND_RESUME.pdf" download class="px-8 py-4 rounded-full bg-gradient-to-r from-azure-600 to-azure-700 hover:from-azure-500 hover:to-azure-600 transition-all duration-300 text-white font-medium shadow-lg shadow-azure-900/30 hover:shadow-azure-900/50 transform hover:-translate-y-1 inline-flex items-center gap-3">
                         <i class="fas fa-download"></i>
                         Download CV
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -755,6 +880,27 @@
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
+        }
+
+        // Resume Zoom Functionality
+        let currentZoom = 1;
+        function zoomResume(delta) {
+            currentZoom += delta;
+            currentZoom = Math.max(0.5, Math.min(2, currentZoom));
+            const frame = document.getElementById('resumeFrame');
+            if (frame) {
+                frame.style.transform = `scale(${currentZoom})`;
+                frame.style.transformOrigin = 'top left';
+            }
+        }
+
+        // Copy Link Functionality
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                alert('Portfolio link copied to clipboard!');
+            }).catch(() => {
+                alert('Failed to copy link');
+            });
         }
 
         // GSAP Animations
@@ -837,6 +983,26 @@
             item.addEventListener('mouseleave', () => {
                 gsap.to(item, { scale: 1, duration: 0.3, ease: "power2.out" });
             });
+        });
+
+        // Check if PDF loaded, show fallback if not
+        window.addEventListener('load', () => {
+            const frame = document.getElementById('resumeFrame');
+            const fallback = document.getElementById('pdfFallback');
+            
+            // Simple check - if iframe content is empty or failed
+            setTimeout(() => {
+                try {
+                    const frameDoc = frame.contentDocument || frame.contentWindow.document;
+                    if (!frameDoc || frameDoc.body.innerHTML === '') {
+                        fallback.style.display = 'block';
+                        frame.style.display = 'none';
+                    }
+                } catch (e) {
+                    // Cross-origin error means PDF is loading from different origin, which is fine
+                    console.log('PDF loading...');
+                }
+            }, 2000);
         });
     </script>
 </body>
